@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technautica</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilos para la imagen de encabezado */
+        .hero-image {
+            width: 100%; /* La imagen ocupará todo el ancho del contenedor */
+            max-height: 420px; /* Ajusta la altura máxima de la imagen según sea necesario */
+            object-fit: cover; /* Mantiene la proporción de la imagen al recortar */
+        }
+
+        /* Otros estilos */
+        body {
+            background-color: #f0f0f0;
+            color: #212529;
+            font-family: Arial, sans-serif;
+        }
+
+        h1, h2, h3 {
+            color: #212529;
+        }
+
+        /* Espacio debajo de las imágenes */
+        img {
+            margin-bottom: 20px;
+        }
+
+        /* Estilos del navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #000;
+            color: white;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .navbar ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar ul li {
+            margin-left: 20px;
+        }
+
+        .navbar ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        /* Estilos del carrusel */
+        .services-carousel {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .carousel {
+            display: flex;
+            overflow: hidden;
+            transition: transform 0.5s ease;
+        }
+
+        .carousel-item {
+            min-width: 300px;
+            margin: 10px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .carousel-controls {
+            display: flex;
+            justify-content: space-between;
+            margin: 10px 0;
+        }
+
+        .control {
+            cursor: pointer;
+            font-size: 20px;
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="logo"></div>
+        <nav>
+            <ul>
+                <li><a href="#quienes-somos">Quienes somos</a></li>
+                <li><a href="#carousel">Productos</a></li> <!-- Aquí se enlaza al carrusel -->
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section con imagen local -->
+    <section class="hero">
+        <!-- Imagen desde una URL -->
+        <img src="https://images.unsplash.com/photo-1580983559367-0dc2f8934365?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Imagen hero" class="hero-image">
+    </section>
+
+    <!-- Hero Section con texto centrado -->
+    <section class="hero" id="quienes-somos">
+        <div class="hero-content">
+            <h1>Somos una empresa multidisciplinaria que ofrece soluciones <br> integrales y creativas</h1> <br> </h1> 
+            <p>Impulsamos tu negocio al siguiente nivel, con un enfoque colaborativo y flexible, combinamos creatividad y tecnología para ayudarte a alcanzar tus objetivos y destacar en el mercado.</p>
+        </div>
+    </section>
+
+    <!-- Botón de más información -->
+<div class="info-button">
+    <a href="#mas-informacion" class="btn">Más Información</a> <!-- Cambia #mas-informacion por una URL si es necesario -->
+</div>
+
+<!-- Sección de más información -->
+<section id="mas-informacion">
+</section>
+
+  <!-- Título para el carrusel -->
+<h2 class="carousel-title">Equipos expertos en desarrollar productos digitales</h2>
+
+<!-- Carrusel de Servicios -->
+<section class="services-carousel" id="carousel">
+    <div class="carousel">
+        <div class="carousel-item active">
+            <h3>Desarrollo de plataformas</h3>
+            <p>Crea productos y plataformas escalables que estén alineadas con la visión estratégica del negocio.</p>
+            <a href="#">Leer más →</a>
+        </div>
+        <div class="carousel-item">
+            <h3>Edición de video</h3>
+            <p>Transformamos ideas en imágenes impactantes a través de la creación y edición de videos que capturan la esencia de cada proyecto y conectan con tu audiencia.</p>
+            <a href="#">Leer más →</a>
+        </div>
+        <div class="carousel-item">
+            <h3>Marketing</h3>
+            <p>Conecta tu marca con tus clientes ideales, utilizando herramientas y técnicas innovadoras para atraer, involucrar y fidelizar a tu audiencia, maximizando el impacto de tu negocio.</p>
+            <a href="#">Leer más →</a>
+        </div>
+        <div class="carousel-item">
+            <h3>Diseño UX y UI</h3>
+            <p>Aumenta el interés de la audiencia con un mejor diseño de UX e investigación sobre la experiencia del usuario.</p>
+            <a href="#">Leer más →</a>
+        </div>
+    </div>
+    <!-- Controles del carrusel -->
+    <div class="carousel-controls">
+        <span class="control prev">◀</span>
+        <span class="control next">▶</span>
+    </div>
+</section>
+
+    <script src="script.js"></script>
+    <script>
+        // Función para mostrar el carrusel cuando el usuario hace scroll
+        function showCarouselOnScroll() {
+            const carousel = document.getElementById('carousel');
+            const carouselPosition = carousel.getBoundingClientRect().top;
+            const screenHeight = window.innerHeight;
+
+            if (carouselPosition < screenHeight) {
+                carousel.classList.add('show');
+                window.removeEventListener('scroll', showCarouselOnScroll); // Elimina el evento una vez que se muestra
+            }
+        }
+
+        window.addEventListener('scroll', showCarouselOnScroll);
+
+        // Funcionalidad del carrusel
+        const track = document.querySelector('.carousel');
+        const slides = Array.from(track.children);
+        const nextButton = document.querySelector('.next');
+        const prevButton = document.querySelector('.prev');
+        let currentIndex = 0;
+        const slideWidth = slides[0].getBoundingClientRect().width;
+
+        const moveToSlide = (index) => {
+            const offset = -index * slideWidth;
+            track.style.transform = `translateX(${offset}px)`;
+            currentIndex = index;
+        };
+
+        nextButton.addEventListener('click', () => {
+            const nextIndex = (currentIndex + 1) % slides.length;
+            moveToSlide(nextIndex);
+        });
+
+        prevButton.addEventListener('click', () => {
+            const prevIndex = (currentIndex - 1 + slides.length) % slides.length;
+            moveToSlide(prevIndex);
+        });
+    </script>
+</body>
+</html>
+
+
